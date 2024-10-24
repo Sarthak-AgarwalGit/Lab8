@@ -9,8 +9,21 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomListTest {
+    private CustomList list;
 
+    public CustomList MockCityList(){
+        list = new CustomList(null, new ArrayList<>());
+        return list;
+    }
 
+    @Test
+    public void addCityTest() {
+        list = MockCityList();
+        int listSize = list.getCount();
+        list.addCity(new City("Edmonton", "AB"));
+        assertEquals(listSize + 1, list.getCount());
+    }
 }
