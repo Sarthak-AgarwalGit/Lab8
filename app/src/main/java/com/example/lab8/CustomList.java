@@ -43,12 +43,23 @@ public class CustomList extends ArrayAdapter<City> {
         return view;
     }
 
-    @Override
     public int getCount() {
         return cities.size();
     }
 
     public void addCity(City city) {
         cities.add(city);
+    }
+
+    public boolean hasCity(City city) {
+        return cities.contains(city);
+    }
+
+    public boolean deleteCity(City city) {
+        return cities.remove(city);
+    }
+
+    public int countCities() {
+        return cities.size();
     }
 }
